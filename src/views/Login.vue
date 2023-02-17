@@ -2,14 +2,18 @@
 import Form from "../components/Form.vue";
 import { ref } from "vue";
 
-const login = ref("login");
+const login = ref("Login");
 </script>
 
 <template>
   <main>
     <div class="container">
-      <h1>Sign up!</h1>
-      <Form :functionality="login" />
+      <div class="container-img">
+        <img src="../assets/images/beClever.png" alt="" />
+      </div>
+      <div class="container-content">
+        <Form :functionality="login" />
+      </div>
     </div>
   </main>
 </template>
@@ -25,7 +29,12 @@ h1 {
   font-size: 1.5em;
 }
 .container {
+  margin-top: -5em;
   width: 26em;
-  height: 30em;
+  height: 40em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 </style>

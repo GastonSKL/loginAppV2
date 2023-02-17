@@ -1,19 +1,20 @@
 <script setup>
-import Table from '../components/Table.vue';
-
-
+import Table from "../components/Table.vue";
+import Navbar from "../components/Navbar.vue";
 </script>
 
 <template>
+  
+  <Navbar />
   <main>
-      <h1>User data</h1>
-      
-      <Table/>
+    <Table />
   </main>
 </template>
 
 <style scoped>
-main{
-    padding: 2em;
+main {
+  padding: 2em;
+  position: relative;
+  top: 2em;
 }
 </style>
