@@ -5,26 +5,37 @@ import { useRouter } from "vue-router";
 import { onMounted, watch } from "vue";
 
 const router = useRouter();
-const lista = ref([]);
 const search = ref("");
+let lista = ref([]);
+const items = ref([]);
 
-watch(search, () => {
-  lista.value = lista.value.filter((user) =>
-    user.name.first
-      .toLocaleLowerCase()
-      .includes(search.value.toLocaleLowerCase())
-  );
-});
 
 const get = () => {
   let direccion = "https://randomuser.me/api/?results=50";
-  axios.get(direccion).then((e) => (lista.value = e.data.results));
+  axios.get(direccion).then((e) => {
+    lista.value = e.data.results;
+    items.value = e.data.results;  
+  });
+  
 };
 
 onMounted(() => {
-  get();
-  return console.log(lista);
+  
+  return get();
 });
+
+
+watch(search, () => {
+  items.value = lista.value.filter((user) =>
+      user.name.first
+      .toLocaleLowerCase()
+      .includes(search.value.toLocaleLowerCase())
+    
+  );
+  
+});
+
+
 </script>
 
 <template>
@@ -49,7 +60,7 @@ onMounted(() => {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="user in lista" v-auto-animate>
+      <tr v-for="user in items" v-auto-animate>
         <td class="container-img">
           <img :src="user.picture.thumbnail" class="thumnail" />
         </td>
