@@ -37,7 +37,7 @@ router.beforeEach(async (to, from, next) => {
     if (await getCurentUser()) {
       next();
     } else {
-      alert("Usuario no ingresado... Acceso no autorizado");
+      console.log("Usuario no ingresado... Acceso no autorizado");
       next("/");
     }
   } else {

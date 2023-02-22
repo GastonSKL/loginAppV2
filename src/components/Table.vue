@@ -3,6 +3,7 @@ import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { onMounted, watch } from "vue";
+import UsersAPI from "../services/UsersAPI";
 
 const router = useRouter();
 const search = ref("");
@@ -10,11 +11,16 @@ let lista = ref([]);
 const items = ref([]);
 
 const get = () => {
-  let direccion = "https://randomuser.me/api/?results=50";
-  axios.get(direccion).then((e) => {
-    lista.value = e.data.results;
-    items.value = e.data.results;
-  });
+  // let direccion = "https://randomuser.me/api/?results=50";
+  // axios.get(direccion).then((e) => {
+  //   lista.value = e.data.results;
+  //   items.value = e.data.results;
+  // });
+  UsersAPI.getUsers()
+  .then((e) => {
+     lista.value = e.data.results;
+     items.value = e.data.results;
+   });
 };
 
 onMounted(() => {
