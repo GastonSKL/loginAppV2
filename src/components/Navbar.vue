@@ -27,7 +27,7 @@ const signOutHandler = () => {
 
 <style scoped>
 .img-container{
-    margin-left: 1em;
+    margin-left: 1.5em;
 }
 
 .btn{

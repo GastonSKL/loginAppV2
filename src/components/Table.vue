@@ -40,10 +40,10 @@ watch(search, () => {
 
 <template>
   <div class="search">
-    <p>Input the name that you want to find here</p>
+    <p>Ingresa el nombre que quieras encontrar</p>
     <input
       type="text"
-      placeholder="Search..."
+      placeholder="Buscar..."
       v-model.trim="search"
       class="form-control"
     />
@@ -52,11 +52,11 @@ watch(search, () => {
     <thead>
       <tr>
         <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col">Lastname</th>
-        <th scope="col">City</th>
-        <th scope="col">Country</th>
-        <th scope="col">Timezone</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">País</th>
+        <th scope="col">Zona horaria</th>
       </tr>
     </thead>
     <tbody>

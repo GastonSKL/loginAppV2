@@ -6,8 +6,6 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
@@ -31,7 +29,7 @@ onMounted(() => {
 const register = () => {
   createUserWithEmailAndPassword(getAuth(), email.value, psw.value)
     .then((data) => {
-      console.log("Succesfully registered!");
+      console.log("Registrado correctamete!");
       router.push("/home");
     })
     .catch((error) => {
@@ -56,7 +54,7 @@ const register = () => {
 const login = () => {
   signInWithEmailAndPassword(getAuth(), email.value, psw.value)
     .then((data) => {
-      console.log("Succesfully signed in!");
+      console.log("Logueado correctamente!");
       router.push("/home");
     })
     .catch((error) => {
@@ -112,7 +110,7 @@ const redirect = () => {
       />
     </div>
     <div class="form-group">
-      <label for="psw">Password</label>
+      <label for="psw">Contraseña</label>
       <input
         type="password"
         class="form-control"
@@ -138,7 +136,7 @@ const redirect = () => {
         @click="router.push('/register')"
         v-if="functionality != 'Register' && !isLoggedIn"
       >
-        Register
+        Registrarse
       </button>
       <button
         type="submit"
@@ -146,7 +144,7 @@ const redirect = () => {
         @click="signOutHandler()"
         v-if="isLoggedIn"
       >
-        Log out
+        Desloguear
       </button>
     </div>
   </div>
