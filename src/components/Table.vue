@@ -9,33 +9,25 @@ const search = ref("");
 let lista = ref([]);
 const items = ref([]);
 
-
 const get = () => {
   let direccion = "https://randomuser.me/api/?results=50";
   axios.get(direccion).then((e) => {
     lista.value = e.data.results;
-    items.value = e.data.results;  
+    items.value = e.data.results;
   });
-  
 };
 
 onMounted(() => {
-  
   return get();
 });
 
-
 watch(search, () => {
   items.value = lista.value.filter((user) =>
-      user.name.first
+    user.name.first
       .toLocaleLowerCase()
       .includes(search.value.toLocaleLowerCase())
-    
   );
-  
 });
-
-
 </script>
 
 <template>

@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import { defineProps } from "vue";
 import { useRouter } from "vue-router";
 import {
   getAuth,
@@ -169,13 +168,13 @@ input {
   justify-content: space-evenly;
 }
 
-.btn-light{
-    background-color: rgba(156,156,156,255);
-    color: white;
+.btn-light {
+  background-color: rgba(156, 156, 156, 255);
+  color: white;
 }
 
-.btn-light:hover{
-    background-color: rgba(130,130,130,255);
+.btn-light:hover {
+  background-color: rgba(130, 130, 130, 255);
 }
 
 .btn-container {

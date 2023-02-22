@@ -3,7 +3,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Login from "../views/Login.vue";
 import Register from "../views/Register.vue";
 import Feed from "../views/Feed.vue";
-import { async } from "@firebase/util";
 
 const getCurentUser = () => {
   return new Promise((resolve, reject) => {
